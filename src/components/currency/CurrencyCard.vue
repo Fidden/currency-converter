@@ -40,7 +40,7 @@ const props = defineProps<{
     currency: ICurrency;
 }>();
 
-const convertedCurrency = computed(() => useConvert(mainStore.baseCurrency, props.currency.CharCode));
+const convertedCurrency = computed(() => useConvert(props.currency.CharCode, mainStore.baseCurrency));
 
 const diffAmount = computed(() => props.currency.Value - props.currency.Previous);
 const mainStore = useMainStore();
