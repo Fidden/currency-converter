@@ -33,7 +33,7 @@
                     class="switch"
                     @click="switchCurrency">
                     <img
-                        src="src/assets/img/reverse.svg"
+                        src="@/assets/img/reverse.svg"
                         alt="reverse">
                 </button>
                 <div class="item">
