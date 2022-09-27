@@ -35,6 +35,8 @@ const mainStore = useMainStore();
 </script>
 
 <style lang="scss" scoped>
+@import "@/assets/css/variables.scss";
+
 .header-currency-selector {
     position: relative;
 
@@ -47,6 +49,12 @@ const mainStore = useMainStore();
         background: none;
         outline: none;
         border: none;
+        transition: 0.2s;
+
+        &:hover {
+            color: $main;
+            transition: 0.2s;
+        }
     }
 
     .body {
