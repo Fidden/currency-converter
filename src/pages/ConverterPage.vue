@@ -235,7 +235,7 @@ function changeCurrency(data: string, _type: 'from' | 'to') {
         }
     }
 
-    @media (max-width: $x-small) or (max-width: $small) {
+    @media (max-width: $x-small) or (max-width: $small) or (max-width: $medium) {
         & {
             flex-direction: column;
         }

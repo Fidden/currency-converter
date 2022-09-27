@@ -61,6 +61,12 @@ function searchCurrency(data: string) {
                 grid-template-columns: repeat(4, 1fr);
             }
         }
+
+        @media (max-width: $medium) and (min-width: $small) {
+            & {
+                grid-template-columns: repeat(5, 1fr);
+            }
+        }
     }
 }
 
