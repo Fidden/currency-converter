@@ -1,5 +1,6 @@
 <template>
     <div
+        v-click-outside="handleClose"
         class="header-currency-selector"
         @click="isOpen = !isOpen"
     >
@@ -32,6 +33,11 @@ import {useMainStore} from '@/store';
 
 const isOpen = ref<boolean>(false);
 const mainStore = useMainStore();
+
+function handleClose() {
+    if (isOpen.value)
+        isOpen.value = false;
+}
 </script>
 
 <style lang="scss" scoped>

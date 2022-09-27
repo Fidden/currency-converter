@@ -1,5 +1,6 @@
 <template>
     <div
+        v-click-outside="handleClose"
         class="currency-selector"
         @click="isOpen = !isOpen"
     >
@@ -39,6 +40,11 @@ const mainStore = useMainStore();
 const emit = defineEmits<{
     (e: 'selected', data: string): void;
 }>();
+
+function handleClose() {
+    if (isOpen.value)
+        isOpen.value = false;
+}
 </script>
 
 <style lang="scss" scoped>
@@ -53,6 +59,7 @@ const emit = defineEmits<{
         background: none;
         outline: none;
         border: none;
+        cursor: pointer;
     }
 
     .body {
