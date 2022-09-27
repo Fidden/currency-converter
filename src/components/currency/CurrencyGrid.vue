@@ -41,8 +41,8 @@ watch(mainStore, (value) => {
 
 function searchCurrency(data: string) {
     filteredCurrency.value = Object.values(mainStore.currencies).filter(item =>
-        item.Name.toLowerCase().indexOf(data) !== -1 ||
-        item.CharCode.toLowerCase().indexOf(data) !== -1
+        item.Name.toLowerCase().indexOf(data.toLowerCase()) !== -1 ||
+        item.CharCode.toLowerCase().indexOf(data.toLowerCase()) !== -1
     );
 }
 </script>
