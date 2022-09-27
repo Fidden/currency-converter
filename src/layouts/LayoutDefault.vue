@@ -6,12 +6,12 @@
     </div>
 </template>
 
-<script setup lang="ts">
+<script lang="ts" setup>
 
-import TheHeader from "@/components/header/TheHeader.vue";
-import TheFooter from "@/components/footer/TheFooter.vue";</script>
+import TheHeader from '@/components/header/TheHeader.vue';
+import TheFooter from '@/components/footer/TheFooter.vue';</script>
 
-<style scoped lang="scss">
+<style lang="scss" scoped>
 .layout-container {
     display: flex;
     flex-direction: column;

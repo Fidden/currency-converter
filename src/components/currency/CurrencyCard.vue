@@ -1,5 +1,7 @@
 <template>
-    <div class="currency-card">
+    <div
+        v-if="currency"
+        class="currency-card">
         <div class="title">
             <p class="name">
                 {{ currency.Name }}
@@ -7,8 +9,8 @@
         </div>
         <div class="change-container">
             <p
-                class="form"
                 :class="{inc: diffAmount > 0, dec: diffAmount < 0 }"
+                class="form"
             >
                 1 {{ currency.CharCode }}
                 <span class="diff-amount">
@@ -19,24 +21,29 @@
             </p>
             <div class="separate"/>
             <p class="to">
-                {{ currency.Value }} RUB
+                {{ convertedCurrency }} {{ mainStore.baseCurrency }}
             </p>
         </div>
     </div>
 </template>
 
-<script setup lang="ts">
-import {ICurrency} from "@/interfaces/ICurrency";
-import {computed} from "vue";
+<script lang="ts" setup>
+import {ICurrency} from '@/interfaces/ICurrency';
+import {computed} from 'vue';
+import {useMainStore} from '@/store';
+import {useConvert} from '@/composables/useConvert';
 
 const props = defineProps<{
     currency: ICurrency;
 }>();
 
-const diffAmount = computed(() => props.currency.Value - props.currency.Previous)
+const convertedCurrency = computed(() => useConvert(mainStore.baseCurrency, props.currency.CharCode));
+
+const diffAmount = computed(() => props.currency.Value - props.currency.Previous);
+const mainStore = useMainStore();
 </script>
 
-<style scoped lang="scss">
+<style lang="scss" scoped>
 .currency-card {
     display: flex;
     flex-direction: column;
@@ -56,6 +63,8 @@ const diffAmount = computed(() => props.currency.Value - props.currency.Previous
         -webkit-line-clamp: 2;
         -webkit-box-orient: vertical;
         display: -webkit-box;
+        text-align: center;
+        margin-bottom: 7px;
     }
 
     .form {

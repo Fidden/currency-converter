@@ -10,12 +10,12 @@
     </header>
 </template>
 
-<script setup lang="ts">
+<script lang="ts" setup>
 
-import TheHeaderNav from "@/components/header/TheHeaderNav.vue";
-import TheHeaderCurrencySelector from "@/components/header/TheHeaderCurrencySelector.vue";</script>
+import TheHeaderNav from '@/components/header/TheHeaderNav.vue';
+import TheHeaderCurrencySelector from '@/components/header/TheHeaderCurrencySelector.vue';</script>
 
-<style scoped lang="scss">
+<style lang="scss" scoped>
 .header {
     display: flex;
     flex-direction: row;

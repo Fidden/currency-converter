@@ -11,11 +11,11 @@
     </LayoutDefault>
 </template>
 
-<script setup lang="ts">
-import LayoutDefault from "../layouts/LayoutDefault.vue";
-import CurrencyGrid from "@/components/currency/CurrencyGrid.vue";</script>
+<script lang="ts" setup>
+import LayoutDefault from '../layouts/LayoutDefault.vue';
+import CurrencyGrid from '@/components/currency/CurrencyGrid.vue';</script>
 
-<style scoped lang="scss">
+<style lang="scss" scoped>
 .main-container {
     display: flex;
     flex-direction: column;

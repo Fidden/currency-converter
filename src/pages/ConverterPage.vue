@@ -4,9 +4,13 @@
             <div class="converter-container">
                 <div class="item">
                     <div class="item-head">
-                        <p class="item-head-title">У меня есть</p>
+                        <p class="item-head-title">
+                            У меня есть
+                        </p>
                         <div class="item-head-body">
-                            <button class="active">RUB</button>
+                            <button class="active">
+                                RUB
+                            </button>
                             <button>USD</button>
                             <button>EUR</button>
                             <button>GBP</button>
@@ -14,8 +18,13 @@
                         </div>
                     </div>
                     <div class="item-body">
-                        <input type="text" placeholder="Кол-во" value="5000">
-                        <p class="convert-cost">1 RUB = 0.0172 USD</p>
+                        <input
+                            placeholder="Кол-во"
+                            type="text"
+                            value="5000">
+                        <p class="convert-cost">
+                            1 RUB = 0.0172 USD
+                        </p>
                     </div>
                 </div>
                 <button class="switch">
@@ -24,7 +33,9 @@
                 </button>
                 <div class="item">
                     <div class="item-head">
-                        <p class="item-head-title">У меня есть</p>
+                        <p class="item-head-title">
+                            У меня есть
+                        </p>
                         <div class="item-head-body">
                             <button>RUB</button>
                             <button>USD</button>
@@ -33,8 +44,12 @@
                         </div>
                     </div>
                     <div class="item-body">
-                        <input type="text" placeholder="Кол-во">
-                        <p class="convert-cost">1 RUB = 0.0172 USD</p>
+                        <input
+                            placeholder="Кол-во"
+                            type="text">
+                        <p class="convert-cost">
+                            1 RUB = 0.0172 USD
+                        </p>
                     </div>
                 </div>
             </div>
@@ -42,11 +57,11 @@
     </LayoutDefault>
 </template>
 
-<script setup lang="ts">
+<script lang="ts" setup>
 import LayoutDefault from '../layouts/LayoutDefault.vue';
-import CurrencySelector from "@/components/currency/CurrencySelector.vue";</script>
+import CurrencySelector from '@/components/currency/CurrencySelector.vue';</script>
 
-<style scoped lang="scss">
+<style lang="scss" scoped>
 .converter-container {
     display: flex;
     flex-direction: row;

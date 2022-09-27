@@ -1,14 +1,16 @@
 <template>
     <footer class="footer">
-        <p class="footer-title">© «Курсы валют»</p>
+        <p class="footer-title">
+            © «Курсы валют»
+        </p>
     </footer>
 </template>
 
-<script setup lang="ts">
+<script lang="ts" setup>
 
 </script>
 
-<style scoped lang="scss">
+<style lang="scss" scoped>
 .footer {
     display: flex;
     flex-direction: row;

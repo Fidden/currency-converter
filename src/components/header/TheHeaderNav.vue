@@ -9,11 +9,11 @@
     </nav>
 </template>
 
-<script setup lang="ts">
+<script lang="ts" setup>
 
 </script>
 
-<style scoped lang="scss">
+<style lang="scss" scoped>
 .header-nav {
     display: flex;
     flex-direction: row;
