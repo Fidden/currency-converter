@@ -37,7 +37,7 @@ import TheHeaderCurrencySelector from '@/components/header/TheHeaderCurrencySele
         color: black;
     }
 
-    @media (max-width: $x-small) {
+    @media (max-width: $large) {
         & {
             padding: 20px;
         }

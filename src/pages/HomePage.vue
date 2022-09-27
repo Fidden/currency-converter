@@ -24,7 +24,7 @@ import CurrencyGrid from '@/components/currency/CurrencyGrid.vue';</script>
     width: 100%;
     margin-top: 60px;
 
-    @media (max-width: $x-small) {
+    @media (max-width: $large) {
         & {
             padding: 20px;
         }

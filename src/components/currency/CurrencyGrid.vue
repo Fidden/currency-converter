@@ -37,6 +37,7 @@ function searchCurrency(data: string) {
 </script>
 
 <style lang="scss" scoped>
+@import "@/assets/css/variables.scss";
 
 .currency-grid {
     display: flex;
@@ -49,9 +50,15 @@ function searchCurrency(data: string) {
         grid-template-rows: repeat(6, 1fr);
         gap: 20px;
 
-        @media (max-width: 576px) {
+        @media (max-width: $x-small) {
             & {
                 grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: $small) and (min-width: $x-small) {
+            & {
+                grid-template-columns: repeat(4, 1fr);
             }
         }
     }

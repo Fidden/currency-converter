@@ -28,7 +28,7 @@
         text-transform: uppercase;
     }
 
-    @media (max-width: $x-small) {
+    @media (max-width: $large) {
         & {
             padding: 20px;
         }

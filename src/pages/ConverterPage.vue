@@ -105,6 +105,7 @@ function changeCurrency(data: string, _type: 'from' | 'to') {
 
 <style lang="scss" scoped>
 @import '@/assets/css/variables.scss';
+
 .converter-container {
     display: flex;
     flex-direction: row;
@@ -228,9 +229,14 @@ function changeCurrency(data: string, _type: 'from' | 'to') {
         }
     }
 
-    @media (max-width: $x-small) {
+    @media (max-width: $large) {
         & {
             padding: 20px;
+        }
+    }
+
+    @media (max-width: $x-small) or (max-width: $small) {
+        & {
             flex-direction: column;
         }
     }
