@@ -1,0 +1,21 @@
+@import "reset";
+
+:root {
+	font-family: 'Rubik', sans-serif;
+	--container: 1110px;
+	--gray: #cdcdcd;
+	--main: #16b67f;
+}
+
+html, body {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+}
+
+#app {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	min-height: 100%;
+}
