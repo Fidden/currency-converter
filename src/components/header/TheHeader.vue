@@ -16,13 +16,15 @@ import TheHeaderNav from '@/components/header/TheHeaderNav.vue';
 import TheHeaderCurrencySelector from '@/components/header/TheHeaderCurrencySelector.vue';</script>
 
 <style lang="scss" scoped>
+@import '@/assets/css/variables.scss';
+
 .header {
     display: flex;
     flex-direction: row;
     align-items: center;
     width: 100%;
     padding: 20px 0;
-    border-bottom: 1px solid var(--gray);
+    border-bottom: 1px solid $gray;
 
     a {
         text-decoration: none;
@@ -33,6 +35,12 @@ import TheHeaderCurrencySelector from '@/components/header/TheHeaderCurrencySele
         font-weight: 500;
         text-transform: uppercase;
         color: black;
+    }
+
+    @media (max-width: $x-small) {
+        & {
+            padding: 20px;
+        }
     }
 }
 </style>

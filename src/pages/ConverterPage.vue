@@ -104,6 +104,7 @@ function changeCurrency(data: string, _type: 'from' | 'to') {
 </script>
 
 <style lang="scss" scoped>
+@import '@/assets/css/variables.scss';
 .converter-container {
     display: flex;
     flex-direction: row;
@@ -127,15 +128,15 @@ function changeCurrency(data: string, _type: 'from' | 'to') {
                     background: none;
                     outline: none;
                     border: none;
-                    border-top: 1px solid var(--gray);
-                    border-bottom: 1px solid var(--gray);
-                    border-right: 1px solid var(--gray);
+                    border-top: 1px solid $gray;
+                    border-bottom: 1px solid $gray;
+                    border-right: 1px solid $gray;
                     transition: 0.2s;
                     padding: 8px 24px;
                     cursor: pointer;
 
                     &:first-child, &:last-child {
-                        border: 1px solid var(--gray);
+                        border: 1px solid $gray;
                     }
 
                     &:first-child {
@@ -147,16 +148,26 @@ function changeCurrency(data: string, _type: 'from' | 'to') {
                     }
 
                     &.active {
-                        background: var(--main);
+                        background: $main;
                         color: white;
                         transition: 0.2s;
+                    }
+
+                    @media (max-width: $x-small) {
+                        & {
+                            padding: 10px 0;
+                            flex: 1;
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                        }
                     }
                 }
             }
         }
 
         .item-body {
-            border: 1px solid var(--gray);
+            border: 1px solid $gray;
             position: relative;
             height: 150px;
 
@@ -208,6 +219,19 @@ function changeCurrency(data: string, _type: 'from' | 'to') {
                 opacity: 0.5;
                 transition: 0.2s;
             }
+        }
+
+        @media (max-width: $x-small) {
+            & {
+                margin: 40px auto;
+            }
+        }
+    }
+
+    @media (max-width: $x-small) {
+        & {
+            padding: 20px;
+            flex-direction: column;
         }
     }
 }

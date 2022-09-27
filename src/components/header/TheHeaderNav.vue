@@ -14,6 +14,7 @@
 </script>
 
 <style lang="scss" scoped>
+@import '@/assets/css/variables.scss';
 .header-nav {
     display: flex;
     flex-direction: row;
@@ -24,14 +25,14 @@
     a {
         color: black;
         transition: 0.2s;
-        text-decoration-color: var(--gray);
+        text-decoration-color: $gray;
         text-underline-offset: 4px;
     }
 
     a:hover {
         transition: 0.2s;
-        color: var(--main);
-        text-decoration-color: var(--main);
+        color: $main;
+        text-decoration-color: $main;
     }
 }
 </style>

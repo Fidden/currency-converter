@@ -44,10 +44,12 @@ const mainStore = useMainStore();
 </script>
 
 <style lang="scss" scoped>
+@import '@/assets/css/variables.scss';
+
 .currency-card {
     display: flex;
     flex-direction: column;
-    border: 1px solid var(--gray);
+    border: 1px solid $gray;
     border-radius: 6px;
     padding: 20px;
 
@@ -117,7 +119,7 @@ const mainStore = useMainStore();
     .separate {
         width: 100%;
         height: 1px;
-        background: var(--gray);
+        background: $gray;
         margin: 5px 0;
     }
 }

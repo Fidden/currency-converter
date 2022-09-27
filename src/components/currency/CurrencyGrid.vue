@@ -48,6 +48,12 @@ function searchCurrency(data: string) {
         grid-template-columns: repeat(6, 1fr);
         grid-template-rows: repeat(6, 1fr);
         gap: 20px;
+
+        @media (max-width: 576px) {
+            & {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
     }
 }
 

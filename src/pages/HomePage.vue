@@ -16,10 +16,18 @@ import LayoutDefault from '../layouts/LayoutDefault.vue';
 import CurrencyGrid from '@/components/currency/CurrencyGrid.vue';</script>
 
 <style lang="scss" scoped>
+@import '@/assets/css/variables.scss';
+
 .main-container {
     display: flex;
     flex-direction: column;
     width: 100%;
     margin-top: 60px;
+
+    @media (max-width: $x-small) {
+        & {
+            padding: 20px;
+        }
+    }
 }
 </style>

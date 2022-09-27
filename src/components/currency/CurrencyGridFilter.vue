@@ -28,6 +28,8 @@ watch(query, (value) => {
 </script>
 
 <style lang="scss" scoped>
+@import '@/assets/css/variables.scss';
+
 .currency-filter {
     width: 100%;
     display: flex;
@@ -35,7 +37,7 @@ watch(query, (value) => {
     margin: 20px 0 30px 0;
     border-radius: 6px;
     overflow: hidden;
-    border: 1px solid var(--gray);
+    border: 1px solid $gray;
 
     input {
         height: 40px;
