@@ -13,11 +13,16 @@
             />
         </div>
         <div
-            v-else
-            class="body skeleton">
+            v-else-if="Object.values(mainStore.currencies).length <= 0"
+            class="body">
             <CurrencyCardSkeleton
                 v-for="item in Array.from(Array(20).keys())"
                 :key="item"/>
+        </div>
+        <div
+            v-else
+            class="not-found">
+            <h2>Кажется ничего не найдено.</h2>
         </div>
     </div>
 </template>
@@ -54,6 +59,13 @@ function searchCurrency(data: string) {
     display: flex;
     flex-direction: column;
     padding-bottom: 60px;
+
+    .not-found {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        text-align: center;
+    }
 
     .body {
         display: grid;
