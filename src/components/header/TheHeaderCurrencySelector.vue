@@ -77,6 +77,15 @@ function handleClose() {
         gap: 5px 20px;
         background: white;
 
+
+        @media (max-width: $medium) {
+            grid-template-columns: repeat(2, 250px);
+        }
+
+        @media (max-width: $large) {
+            grid-template-columns: repeat(1, 250px);
+        }
+
         .currency-item {
             display: flex;
             flex-direction: row;

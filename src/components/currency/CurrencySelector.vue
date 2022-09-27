@@ -48,6 +48,8 @@ function handleClose() {
 </script>
 
 <style lang="scss" scoped>
+@import "@/assets/css/variables.scss";
+
 .currency-selector {
     position: relative;
 
@@ -75,6 +77,15 @@ function handleClose() {
         grid-template-columns: repeat(3, 250px);
         gap: 5px 20px;
         background: white;
+
+        @media (max-width: $medium) {
+            grid-template-columns: repeat(2, 250px);
+            transform: translate(-100%, 100%);
+        }
+
+        @media (max-width: $large) {
+            grid-template-columns: repeat(1, 250px);
+        }
 
         .currency-item {
             display: flex;
