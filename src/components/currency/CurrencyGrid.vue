@@ -17,16 +17,17 @@
 import CurrencyCard from '@/components/currency/CurrencyCard.vue';
 import CurrencyGridFilter from '@/components/currency/CurrencyGridFilter.vue';
 import {useMainStore} from '@/store';
-import {onMounted, ref} from 'vue';
+import {ref, watch} from 'vue';
 import {ICurrency} from '@/interfaces/ICurrency';
 
-const filteredCurrency = ref<Array<ICurrency>>();
-
 const mainStore = useMainStore();
+const filteredCurrency = ref<Array<ICurrency>>(
+    Object.values(mainStore.currencies)
+);
 
-onMounted(() => {
-    filteredCurrency.value = Object.values(mainStore.currencies);
-});
+watch(mainStore, (value) => {
+    filteredCurrency.value = Object.values(value.currencies);
+}, {deep: true});
 
 function searchCurrency(data: string) {
     filteredCurrency.value = Object.values(mainStore.currencies).filter(item =>
