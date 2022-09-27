@@ -1,6 +1,9 @@
 <template>
-    <div
+    <RouterLink
         v-if="currency"
+        :to="{name: 'converter', query: {
+            to: currency.CharCode
+        }}"
         class="currency-card">
         <div class="title">
             <p class="name">
@@ -24,7 +27,7 @@
                 {{ convertedCurrency }} {{ mainStore.baseCurrency }}
             </p>
         </div>
-    </div>
+    </RouterLink>
 </template>
 
 <script lang="ts" setup>
@@ -52,6 +55,14 @@ const mainStore = useMainStore();
     border: 1px solid $gray;
     border-radius: 6px;
     padding: 20px;
+    text-decoration: none;
+    color: black;
+    transition: 0.2s;
+
+    &:hover {
+        box-shadow: 0 8px 40px 0 rgb(0 0 0 / 10%);
+        transition: 0.2s;
+    }
 
     .title {
         display: flex;

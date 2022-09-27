@@ -72,8 +72,11 @@
 <script lang="ts" setup>
 import LayoutDefault from '../layouts/LayoutDefault.vue';
 import CurrencySelector from '@/components/currency/CurrencySelector.vue';
-import {ref} from 'vue';
+import {onMounted, ref} from 'vue';
 import {useConvert} from '@/composables/useConvert';
+import {useRoute} from 'vue-router';
+
+const route = useRoute();
 
 const converter = ref({
     from: 'RUB',
@@ -84,22 +87,41 @@ const converter = ref({
     toValue: 0,
 });
 
+onMounted(() => {
+    // Если пользователь перешел по ссылке, ставим валюту из роута
+    if (route.query.to) {
+        converter.value.to = route.query.to.toString();
+        replaceLastCurrency(converter.value.to, 'to');
+    }
+});
+
 function switchCurrency() {
+    //Меняем туда обратно
     const fromBackup = converter.value.from;
+    const fromListBackup = converter.value.fromList;
+
     converter.value.from = converter.value.to;
+    converter.value.fromList = converter.value.toList;
+
     converter.value.to = fromBackup;
+    converter.value.toList = fromListBackup;
 }
 
 function changeCurrency(data: string, _type: 'from' | 'to') {
+    replaceLastCurrency(data, _type);
+    converter.value[_type] = data;
+}
+
+function replaceLastCurrency(data: string, _type: 'from' | 'to') {
+    // Если последний элемент не базовая валюта тогда меняем последнюю валюту на новую
     if (!converter.value.fromList.slice(0, 3).includes(data)) {
+        // Напрраление
         if (_type === 'from') {
             converter.value.fromList[3] = data;
         } else {
             converter.value.toList[3] = data;
         }
     }
-
-    converter.value[_type] = data;
 }
 </script>
 
