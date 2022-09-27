@@ -3,12 +3,21 @@
         <CurrencyGridFilter
             @update="searchCurrency"
         />
-        <div class="body">
+        <div
+            v-if="filteredCurrency.length > 0"
+            class="body">
             <CurrencyCard
                 v-for="currency in filteredCurrency"
                 :key="currency.ID"
                 :currency="currency"
             />
+        </div>
+        <div
+            v-else
+            class="body skeleton">
+            <CurrencyCardSkeleton
+                v-for="item in Array.from(Array(20).keys())"
+                :key="item"/>
         </div>
     </div>
 </template>
@@ -19,6 +28,7 @@ import CurrencyGridFilter from '@/components/currency/CurrencyGridFilter.vue';
 import {useMainStore} from '@/store';
 import {ref, watch} from 'vue';
 import {ICurrency} from '@/interfaces/ICurrency';
+import CurrencyCardSkeleton from '@/components/currency/CurrencyCardSkeleton.vue';
 
 const mainStore = useMainStore();
 const filteredCurrency = ref<Array<ICurrency>>(
