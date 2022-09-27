@@ -16,6 +16,7 @@
                 v-for="currency in mainStore.currencies"
                 :key="currency.ID"
                 class="currency-item"
+                @click="emit('selected', currency.CharCode)"
             >
                 <p>
                     {{ currency.Name }}
@@ -34,6 +35,10 @@ import {useMainStore} from '@/store';
 
 const isOpen = ref<boolean>(false);
 const mainStore = useMainStore();
+
+const emit = defineEmits<{
+    (e: 'selected', data: string): void;
+}>();
 </script>
 
 <style lang="scss" scoped>
