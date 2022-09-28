@@ -24,3 +24,8 @@
 ### `yarn lint`
 
 Анализирует файлы `.ts`, `.vue` на качество кода.
+
+## Скриншоты
+
+![](https://i.imgur.com/I6CBslP.png)
+![](https://i.imgur.com/x5FTT8Y.png)
