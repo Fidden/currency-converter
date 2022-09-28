@@ -73,6 +73,13 @@ function searchCurrency(data: string) {
         grid-template-rows: repeat(6, 1fr);
         gap: 20px;
 
+        @media (max-width: $xs-small) {
+            & {
+                display: flex;
+                flex-direction: column;
+            }
+        }
+
         @media (max-width: $x-small) {
             & {
                 grid-template-columns: repeat(2, 1fr);
@@ -81,7 +88,7 @@ function searchCurrency(data: string) {
 
         @media (max-width: $small) and (min-width: $x-small) {
             & {
-                grid-template-columns: repeat(4, 1fr);
+                grid-template-columns: repeat(3, 1fr);
             }
         }
 
